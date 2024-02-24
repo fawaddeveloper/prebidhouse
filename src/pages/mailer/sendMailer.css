@@ -1,0 +1,86 @@
+.sendMailer{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sendMailerTitle{
+    color: darkblue;
+    margin-bottom: 15px;
+}
+.sendMailerTextArea{
+    min-width: 900px;
+    min-height: 150px;
+    /* overflow-y: scroll; */
+    overflow: auto;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.sendMailerFormLeft{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.sendMailerFormLeft>label{
+    margin-bottom: 10px;
+    color: #0c0c0c;
+    font-weight: 500;
+    font-size: 18px;
+}
+.sendMailerFormLeft>input, .sendMailerFormLeft>textarea{
+    margin-bottom: 10px;
+    border: none;
+    font-size: 16px;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+}
+.sendMailerFormLeft>textarea{
+    min-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.sendMailerFormRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.MailerButton{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: darkblue;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+textarea::-webkit-scrollbar {
+    width: 9px;
+  }
+  
+  /* Track */
+  textarea::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  textarea::-webkit-scrollbar-thumb {
+    background: #080c0f; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  textarea::-webkit-scrollbar-thumb:hover {
+    background: #171921; 
+  }
+
+  .success{
+    font-size: 18px;
+    margin: 7px;
+    color: green;
+    font-weight: 500;
+  }
