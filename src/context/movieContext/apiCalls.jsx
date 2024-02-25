@@ -1,9 +1,12 @@
 import { getMoviesStart, getMoviesSuccess, getMoviesFailure, deleteMovieStart, deleteMoviesSuccess, deleteMovieFailure, createMovieStart, createMovieSuccess, createMovieFailure, updateMovieStart, updateMovieSuccess, updateMovieFailure} from "./MovieActions"
 import axios from "axios"
+const axiosInstance = axios.create({
+    baseURL: process.env.REACT_APP_API_URL,
+  });
 export const getMovies = async (dispatch) => {
     dispatch(getMoviesStart());
     try{
-        const res = await axios.get("http://localhost:8800/api/movies", {
+        const res = await axiosInstance.get("/movies", {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },
@@ -18,7 +21,7 @@ export const getMovies = async (dispatch) => {
 export const createMovie = async (movie, dispatch) => {
     dispatch(createMovieStart());
     try{
-       const res = await axios.post("http://localhost:8800/api/movies", movie, {
+       const res = await axiosInstance.post("/movies", movie, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },
@@ -33,7 +36,7 @@ export const createMovie = async (movie, dispatch) => {
 export const updateMovie = async (movie, dispatch) => {
     dispatch(updateMovieStart());
     try{
-       const res = await axios.put("http://localhost:8800/api/movies/"+movie._id, movie, {
+       const res = await axiosInstance.put("/movies/"+movie._id, movie, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },
@@ -49,7 +52,7 @@ export const updateMovie = async (movie, dispatch) => {
 export const deleteMovie = async (id,dispatch) => {
     dispatch(deleteMovieStart());
     try{
-        await axios.delete("http://localhost:8800/api/movies/"+id, {
+        await axiosInstance.delete("/movies/"+id, {
             headers: { 
                 token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         },

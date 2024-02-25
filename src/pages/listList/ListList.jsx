@@ -7,6 +7,7 @@ import { deleteList ,getLists } from "../../context/listContext/apiCalls"
 import { ListContext } from '../../context/listContext/ListContext'
 export default function ListList() {
     const {lists, dispatch} = useContext(ListContext);
+    
     const navigate = useNavigate();
     function goToProduct(params){
         navigate("/list/" + params.row._id, {state : {list: params.row}});
@@ -15,6 +16,7 @@ export default function ListList() {
         getLists(dispatch);
     }, [dispatch]);
 
+    
     const handleDelete = (id)=>{
      deleteList(id, dispatch);
     };

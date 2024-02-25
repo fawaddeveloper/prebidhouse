@@ -15,7 +15,7 @@ export default function SendMailer() {
     const sendEmails = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8800/bulk-mail', {
+            const response = await axios.post('https://api.prebidestimationhouse.com/bulk-mail', {
                 message: emailList,
                 title: title,
                 html: html
@@ -47,7 +47,7 @@ export default function SendMailer() {
         console.log("data stored working");
         try {
                
-            const response = await axios.post('http://localhost:8800/api/email/upload-mail', {
+            const response = await axios.post('https://api.prebidestimationhouse.com/api/email/upload-mail', {
                 content: [
                     "fawad@gmail.com status ok","fa@gmail.com"
                 ],
